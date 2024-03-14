@@ -30,20 +30,23 @@ body.escurecer::before {
     left: 0;
 }
 
-.header-mobile {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
+
+    max-width: 1110px;
+    margin-inline: auto;
 }
 
-.header-mobile button {
+.header button  {
     border: none;
     background: none;
     width: fit-content;
 }
 
-.header-mobile nav {
+.header nav button  {
     position: fixed;
     background-color: var(--almost-white);
     right: 0;
@@ -62,9 +65,14 @@ body.escurecer::before {
     transition: 0.7s;
 }
 
-.header-mobile nav button {
+.header nav.mobile.abrir  {
     align-items: self-end;
     margin-bottom: 4rem;
+}
+
+main {
+    max-width: 1110px;
+    margin-inline: auto;
 }
 
 .header-mobile nav a {
@@ -174,3 +182,32 @@ body.escurecer::before {
         font-size: 0.9375rem;
         line-height: 1.625rem;
     }
+
+
+@media(min-width: 1110px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.75rem;
+    }
+
+    .primeira-secao {
+        grid-column: 1 / 3;
+    }
+
+    header > button {
+        display: none;
+    }
+
+    header .desktop {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    header .desktop a {
+        font-size: 0.9375rem;
+        line-height: 1.625rem;
+        text-decoration: none;
+        color: var(--gunmetal)
+    }
+}
